@@ -4,6 +4,7 @@ import androidx.room.*
 import com.ersubhadip.multiplestablessqlite.Entities.*
 import com.ersubhadip.multiplestablessqlite.Entities.Relations.SchoolAndDirector
 import com.ersubhadip.multiplestablessqlite.Entities.Relations.SchoolWithStudents
+import com.ersubhadip.multiplestablessqlite.Entities.Relations.StudentWithSubject
 import com.ersubhadip.multiplestablessqlite.Entities.Relations.SubjectWithStudent
 
 @Dao

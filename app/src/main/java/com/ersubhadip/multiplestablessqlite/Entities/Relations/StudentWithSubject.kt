@@ -1,8 +1,11 @@
-package com.ersubhadip.multiplestablessqlite.Entities
+package com.ersubhadip.multiplestablessqlite.Entities.Relations
 
 import androidx.room.Embedded
 import androidx.room.Junction
 import androidx.room.Relation
+import com.ersubhadip.multiplestablessqlite.Entities.Student
+import com.ersubhadip.multiplestablessqlite.Entities.SubjectStudentCrossRef
+import com.ersubhadip.multiplestablessqlite.Entities.Subjects
 
 data class StudentWithSubject(
 
