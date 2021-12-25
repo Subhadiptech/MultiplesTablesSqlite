@@ -14,6 +14,12 @@ interface SchoolDao {
     suspend fun insertSchool(schools: Schools)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertSubject(subjects: Subjects)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertStudentSubjectCrossRef(crossRef: SubjectStudentCrossRef)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertDirector(director: Director)
 
     @Transaction
@@ -25,12 +31,12 @@ interface SchoolDao {
     suspend fun getStudentAndSchoolBySchoolName(schoolName: String): List<SchoolWithStudents>
 
     @Transaction
-    @Query("SELECT * FROM ")
-    suspend fun getStudentsBySubjectName(subjects: Subjects):List<StudentWithSubject>
+    @Query("SELECT * FROM student WHERE studentName = :studentName")
+    suspend fun getStudentsOfSubject(studentName:String):List<StudentWithSubject>
 
     @Transaction
-    @Query("")
-    suspend fun getSubjectsByStudentName(student: Student):List<SubjectWithStudent>
+    @Query("SELECT * FROM subjects WHERE subjectName = :subjectName")
+    suspend fun getSubjectsOfStudent(subjectName: String):List<SubjectWithStudent>
 
 
 }
